@@ -1,7 +1,55 @@
-Contacts save in this importation: <br><br><br>
-<% @contactsimp.each do |contact| %>
-<%= contact.first_name  %>
-<%=  contact.last_name  %>
-<%=contact.email %><br>
-<% end %>
-<%= link_to "All contacts", contacts_path %>
+<style>.product {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+/* Body design */
+.product-body {
+  flex: 1 1 auto;
+}
+.product-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.product-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+
+
+
+/* Hover effects */
+.product:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+
+.product:hover .product-upvote { transform: scale(1.2) }
+.product:hover .product-controls-hidden a { color: #E6E6E6 }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+           <h3> Contacts save in this importation:</h3> <br><br><br>
+            <% @contactsimp.each do |contact| %>
+                <div class="product">
+                         
+                    <div class='product-body'>
+                        <p><%= contact.first_name  %>
+                        <%=  contact.last_name  %>
+                        <%=contact.email %><br></p>
+                    </div> <br>
+                </div>    
+            <% end %>      
+                <br><br><br>
+            <%= link_to "All contacts", contacts_path %>
+        </div>
+    </div>
+</div>
