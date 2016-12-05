@@ -1,0 +1,7 @@
+Liste de tout les importations <br><br><br>
+
+<% @contacts.each do |contact| %>
+<%= contact.first_name  %>
+<%=  contact.last_name  %>
+<%=contact.email %><br><br>
+<% end %>
