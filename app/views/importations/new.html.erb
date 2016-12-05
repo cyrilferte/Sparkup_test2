@@ -1,4 +1,6 @@
-<%= form_for @importation, url: {action: "create"} do |f| %>
+<div class="container" >
+
+    <%= form_for @importation, url: {action: "create"}, class:"btn btn-lg btn-primary" do |f| %>
   <%# 
     Hack around Rails 5 reversion, see:
     https://github.com/rails/rails/issues/17947#issuecomment-227581029
@@ -7,5 +9,9 @@
  
     <%= f.file_field :file %><br />
 
-  <%= f.submit ("send") %>
+  <%= f.submit ("send"), class:"btn btn-primary" %>
 <% end %>
+
+</div>
+
+

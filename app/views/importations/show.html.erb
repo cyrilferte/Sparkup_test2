@@ -1,6 +1,7 @@
-Contacts save in this importation: <br>
-<% @contacts.each do |contact| %>
+Contacts save in this importation: <br><br><br>
+<% @contactsimp.each do |contact| %>
 <%= contact.first_name  %>
 <%=  contact.last_name  %>
-<%=contact.email %><br><br>
+<%=contact.email %><br>
 <% end %>
+<%= link_to "All contacts", contacts_path %>

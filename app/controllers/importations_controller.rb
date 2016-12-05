@@ -6,7 +6,7 @@ class ImportationsController < ApplicationController
 
   def show
     @importation = Importation.find(params[:id])
-    @contacts = Contact.where(importation_id: @importation.id)
+    @contactsimp = Contact.where(importation_id: @importation.id)
   end
 
   def new

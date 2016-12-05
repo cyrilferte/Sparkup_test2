@@ -17,7 +17,7 @@ class Contact < ApplicationRecord
         email: row[2].value,
       }
       contact = Contact.new data
-      
+      data[:success] = true if contact.save
     end
 
     end
